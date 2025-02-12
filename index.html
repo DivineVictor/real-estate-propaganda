@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Blue 💙</title>
+    <style>
+        body {
+            background-color: #001f3f; /* Deep Blue */
+            color: white;
+            font-family: 'Old English Text MT', cursive;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.3em;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: white;
+            background: #0074cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #005bb5;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .response-buttons {
+            margin-top: 20px;
+        }
+        .yes-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .yes-button:hover {
+            background: #218838;
+        }
+        .no-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        .no-button:hover {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Blue 💙</h1>
+        <p>I've been waiting to ask you something...</p>
+        <a href="#" class="button" onclick="reveal()">Click to Reveal</a>
+        
+        <div id="message" style="display: none;">
+            <h1>Will you be my <span style="font-style: italic;">Val</span>? ❤️</h1>
+            <p>From Squidward 🦑</p>
+            <div class="image-container">
+                <img src="blue.jpg" alt="Blue">
+            </div>
+            
+            <div class="response-buttons">
+                <a href="mailto:your-email@example.com?subject=Yes!&body=Of course, Squidward! 💙" class="yes-button">Yes ❤️</a>
+                <button class="no-button" onmouseover="moveNoButton()">No 😢</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function reveal() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function moveNoButton() {
+            let noButton = document.querySelector('.no-button');
+            let randomX = Math.random() * (window.innerWidth - 200);
+            let randomY = Math.random() * (window.innerHeight - 200);
+            noButton.style.position = "absolute";
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+    </script>
+</body>
+</html>
